@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![arXiv](https://img.shields.io/badge/arXiv-2602-b31b1b.svg)](https://arxiv.org/abs/2602)
+[![arXiv](https://img.shields.io/badge/arXiv-2602.04270-b31b1b.svg)](https://arxiv.org/abs/2602.04270)
 
 **Multi-axis Interpretable Latent Component and Condition Inference**
 
@@ -65,7 +65,9 @@ result = milcci.fit(
     split_A=True,
 )
 
-
+# evaluate
+r2 = milcci.global_r2(synth['Y'], result['A_full'], result['Phi'])
+print('R^2 = %.4f' % r2)
 ```
 
 ## Usage
@@ -93,6 +95,19 @@ Main decomposition function. Returns a dict with:
 | `split_A`            | Infer separate A per axis-value (recommended)      |
 | `style_infer_phi`    | `'LS'` or `'dynamic_prior'` (LDS-regularized)     |
 
+### Evaluation
+
+```python
+milcci.global_r2(Y, A_full, Phi)             # scalar R^2
+milcci.per_trial_r2(Y, A_full, Phi)           # per-trial R^2 vector
+milcci.reconstruction_correlation(Y, A_full, Phi)  # Pearson rho
+```
+
+### Synthetic data
+
+```python
+milcci.generate_synthetic_data(N, T, n_ensembles_each, axis_values, noise_std)
+```
 
 ## Running the demo
 
