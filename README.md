@@ -16,9 +16,15 @@ that agree on that axis, while allowing variation along other axes.
 If you use MILCCI in your research, please cite:
 
 ```
-Mudrik, N., Chen, Y., Mishne, G., & Charles, A. S. (2026). Multi-Integration of Labels across Categories for Component Identification (MILCCI). ArXiv, arXiv-2602.
+@article{mudrik2026multi,
+  title={Multi-Integration of Labels across Categories for Component Identification (MILCCI)},
+  author={Mudrik, Noga and Chen, Yuxi and Mishne, Gal and Charles, Adam S},
+  journal={ArXiv},
+  pages={arXiv--2602},
+  year={2026}
+}
 ```
-
+Mudrik, N., Chen, Y., Mishne, G., & Charles, A. S. (2026). Multi-Integration of Labels across Categories for Component Identification (MILCCI). ArXiv, arXiv-2602.
 
 ## Installation
 
