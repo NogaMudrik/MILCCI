@@ -1,13 +1,17 @@
 # MILCCI
 
+[![Python](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2602-b31b1b.svg)](https://arxiv.org/abs/2602)
+
 **Multi-axis Interpretable Latent Component and Condition Inference**
 
-MILCCI decomposes a 3D tensor **Y** (neurons × time × trials) into
+MILCCI decomposes a 3D tensor **Y** (e.g., neurons × time × trials) into
 condition-varying spatial maps **A** and temporal traces **Φ**, with
 similarity regularization along multiple label axes.
 
 Each trial carries a multi-axis label (e.g., stimulus identity × block
-number × trial order).  MILCCI assigns a subset of ensembles to each
+number × trial order). MILCCI assigns a subset of ensembles to each
 axis and enforces that the spatial map **A** is shared across trials
 that agree on that axis, while allowing variation along other axes.
 
@@ -29,10 +33,10 @@ Mudrik, N., Chen, Y., Mishne, G., & Charles, A. S. (2026). Multi-Integration of 
 ## Installation
 
 ```bash
-pip install -e .
+pip install git+https://github.com/NogaMudrik/MILCCI.git
 ```
 
-**Requirements:** Python ≥ 3.8, NumPy < 2.0, SciPy ≥ 1.7, scikit-learn ≥ 1.0.
+**Requirements:** Python ≥ 3.7, NumPy < 2.0, SciPy ≥ 1.7, scikit-learn ≥ 1.0.
 
 ## Quick start
 
@@ -61,16 +65,14 @@ result = milcci.fit(
     split_A=True,
 )
 
-# evaluate
-r2 = milcci.global_r2(synth['Y'], result['A_full'], result['Phi'])
-print('R^2 = %.4f' % r2)
+
 ```
 
-## API
+## Usage
 
 ### `milcci.fit(data, labels, numbers2tuples, ...)`
 
-Main decomposition function.  Returns a dict with:
+Main decomposition function. Returns a dict with:
 
 | Key       | Shape              | Description                          |
 |-----------|--------------------|--------------------------------------|
@@ -91,19 +93,6 @@ Main decomposition function.  Returns a dict with:
 | `split_A`            | Infer separate A per axis-value (recommended)      |
 | `style_infer_phi`    | `'LS'` or `'dynamic_prior'` (LDS-regularized)     |
 
-### Evaluation
-
-```python
-milcci.global_r2(Y, A_full, Phi)             # scalar R^2
-milcci.per_trial_r2(Y, A_full, Phi)           # per-trial R^2 vector
-milcci.reconstruction_correlation(Y, A_full, Phi)  # Pearson rho
-```
-
-### Synthetic data
-
-```python
-milcci.generate_synthetic_data(N, T, n_ensembles_each, axis_values, noise_std)
-```
 
 ## Running the demo
 
@@ -137,8 +126,6 @@ MILCCI/
 ├── .gitignore
 └── README.md
 ```
-
-
 
 ## License
 
