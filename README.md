@@ -1,4 +1,4 @@
-# MILCCI
+# Multi-Integration of Labels across Categories for Component Identification (MILCCI), ICML 2026
 
 [![Python](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -29,6 +29,7 @@ If you use MILCCI in your research, please cite:
 }
 ```
 Mudrik, N., Chen, Y., Mishne, G., & Charles, A. S. (2026). Multi-Integration of Labels across Categories for Component Identification (MILCCI). ArXiv, arXiv-2602.
+Soon at ICML 2026.
 
 ## Installation
 
