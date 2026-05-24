@@ -63,13 +63,14 @@ def main():
         n_ensembles=n_ensembles,
         n_ensembles_each=synth['n_ensembles_each'],
         nu=[0.01] * n_ensembles,
-        lambda_similarity=500,
+        lambda_similarity=100,
         factor_A=5,
-        decor_A=5,
-        num_repeats=6,
+        decor_A=2,
+        num_repeats=15,
         cont_axis_list=[],      # both axes are discrete here
         split_A=True,
         another_update_for_A=False,
+        params_init_A={'ensemble_positive': False},
         verbose=True,
         seed=42,
     )
