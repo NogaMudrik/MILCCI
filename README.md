@@ -65,9 +65,7 @@ result = milcci.fit(
     split_A=True,
 )
 
-# evaluate
-r2 = milcci.global_r2(synth['Y'], result['A_full'], result['Phi'])
-print('R^2 = %.4f' % r2)
+
 ```
 
 ## Usage
@@ -95,19 +93,8 @@ Main decomposition function. Returns a dict with:
 | `split_A`            | Infer separate A per axis-value (recommended)      |
 | `style_infer_phi`    | `'LS'` or `'dynamic_prior'` (LDS-regularized)     |
 
-### Evaluation
 
-```python
-milcci.global_r2(Y, A_full, Phi)             # scalar R^2
-milcci.per_trial_r2(Y, A_full, Phi)           # per-trial R^2 vector
-milcci.reconstruction_correlation(Y, A_full, Phi)  # Pearson rho
-```
 
-### Synthetic data
-
-```python
-milcci.generate_synthetic_data(N, T, n_ensembles_each, axis_values, noise_std)
-```
 
 ## Running the demo
 
