@@ -11,6 +11,15 @@ number × trial order).  MILCCI assigns a subset of ensembles to each
 axis and enforces that the spatial map **A** is shared across trials
 that agree on that axis, while allowing variation along other axes.
 
+## Citation
+
+If you use MILCCI in your research, please cite:
+
+```
+Mudrik, N., Chen, Y., Mishne, G., & Charles, A. S. (2026). Multi-Integration of Labels across Categories for Component Identification (MILCCI). ArXiv, arXiv-2602.
+```
+
+
 ## Installation
 
 ```bash
@@ -123,13 +132,7 @@ MILCCI/
 └── README.md
 ```
 
-## Citation
 
-If you use MILCCI in your research, please cite:
-
-```
-[ICML 2026 citation TBD]
-```
 
 ## License
 
