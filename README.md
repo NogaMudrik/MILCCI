@@ -1,4 +1,4 @@
-# Multi-Integration of Labels across Categories for Component Identification (MILCCI), ICML 2026
+## Multi-Integration of Labels Across Categories for Component Identification in Multi-trial Time Series (MILCCI), ICML 2026
 
 [![Python](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
